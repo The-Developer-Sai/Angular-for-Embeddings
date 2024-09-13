@@ -1,0 +1,23 @@
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  h2, h3, h4 {
+    margin-bottom: 20px;
+  }
+  
+  canvas {
+    width: 100%;
+    max-height: 400px;
+  }
+  
