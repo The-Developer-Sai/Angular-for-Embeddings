@@ -1,0 +1,42 @@
+/* Card Layout for Embeddings Table */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+/* Table Styling */
+.embeddings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.embeddings-table th,
+.embeddings-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.embeddings-table th {
+  background-color: #f8f9fa;
+}
+
+.embeddings-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+p {
+  font-size: 16px;
+  color: #6c757d;
+}

@@ -1,0 +1,18 @@
+<div class="card chat-card">
+  <h2>Chat with Model</h2>
+  
+  <!-- Chat History -->
+  <div class="chat-history" *ngFor="let message of messages">
+    <div class="chat-message" [ngClass]="{ 'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot' }">
+      <strong>{{ message.sender === 'user' ? 'You' : 'Bot' }}:</strong> {{ message.text }}
+    </div>
+  </div>
+
+  <!-- Chat Input Form -->
+  <div class="chat-input-container">
+    <form (ngSubmit)="sendMessage()">
+      <input type="text" [(ngModel)]="userMessage" placeholder="Type your message..." name="message" class="chat-input" required />
+      <button type="submit" class="btn-primary">Send</button>
+    </form>
+  </div>
+</div>

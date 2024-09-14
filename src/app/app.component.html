@@ -1,4 +1,15 @@
-<!-- app.component.html -->
-<div>
-  <app-file-upload></app-file-upload>  <!-- Referencing FileUploadComponent -->
-</div>
+<!-- Main Navigation Bar -->
+<nav class="navbar">
+    <ul class="navbar-list">
+      <li><a routerLink="/pre-process" class="nav-link">Pre Process</a></li>
+      <li><a routerLink="/saved" class="nav-link">Saved</a></li>
+      <li><a routerLink="/chat" class="nav-link">Chat</a></li>
+      <li><a routerLink="/rag-validation" class="nav-link">RAG Validation</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content (Rendered based on routing) -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+  

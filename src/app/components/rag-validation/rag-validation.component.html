@@ -1,0 +1,26 @@
+<div class="card">
+  <h2>RAG Validation - Embeddings</h2>
+
+  <!-- Check if embeddings are available -->
+  <div *ngIf="embeddings && embeddings.length > 0; else noEmbeddings">
+    <table class="embeddings-table">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th *ngFor="let column of columnNames">{{ column }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let embedding of embeddings; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td *ngFor="let value of embedding">{{ value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Message to show when no embeddings are available -->
+  <ng-template #noEmbeddings>
+    <p>No embeddings found. Please generate embeddings in the Chat section.</p>
+  </ng-template>
+</div>

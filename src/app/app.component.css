@@ -1,23 +1,56 @@
-.dashboard-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-  }
-  
-  .card-body {
-    padding: 20px;
-  }
-  
-  h2, h3, h4 {
-    margin-bottom: 20px;
-  }
-  
-  canvas {
-    width: 100%;
-    max-height: 400px;
-  }
-  
+/* Navbar Styling */
+.navbar {
+  background-color: #343a40;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-list li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.nav-link:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+/* Main Content Styling */
+.main-content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card Layout */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  color: #6c757d;
+}

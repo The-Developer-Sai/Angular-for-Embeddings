@@ -1,0 +1,68 @@
+<div class="card">
+  <h2>File Upload - Pre Process</h2>
+  <form (ngSubmit)="onSubmit($event, fileInput)" enctype="multipart/form-data">
+    <!-- File Upload Input -->
+    <div class="form-group">
+      <label for="file-upload">Upload a File</label>
+      <input type="file" #fileInput (change)="onFileSelected($event)" required />
+    </div>
+
+    <!-- Model Selection Dropdown -->
+    <div class="form-group">
+      <label for="model_choice">Choose a Model</label>
+      <select [(ngModel)]="selectedModel" name="model_choice" required>
+        <option value="" disabled>Select Model</option>
+        <option value="BERT Base Uncased">BERT Base Uncased</option>
+        <option value="BERT Large Uncased">BERT Large Uncased</option>
+        <option value="BERT Multilingual">BERT Multilingual</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn-primary" [disabled]="loading">Upload and Process</button>
+
+    <!-- Loading Spinner -->
+    <div *ngIf="loading" class="loading-spinner">
+      <p>Loading, please wait...</p>
+    </div>
+  </form>
+</div>
+
+<!-- Display Results Section (Assuming results is an array) -->
+<div *ngIf="!loading && results.length > 0" class="card results-container">
+  <h3>Results</h3>
+
+  <!-- Loop through each result in results array -->
+  <div *ngFor="let result of results" class="result-item">
+    <p><strong>File Name:</strong> {{ result.file_name }}</p>
+    <p><strong>File Size:</strong> {{ result.file_size | number }} bytes</p>
+    <p><strong>Selected Model:</strong> {{ result.selected_model_name }}</p>
+    <p><strong>Time Taken:</strong> {{ result.time }} seconds</p>
+    <p><strong>Vector Quality:</strong> {{ result.vector_quality }}</p>
+    <p><strong>Retrieval Accuracy:</strong> {{ result.retrieval_accuracy }}</p>
+
+    <!-- Embeddings Table for Each Result -->
+    <div class="embeddings-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th *ngFor="let column of result.column_names">{{ column }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let embedding of result.embeddings; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td *ngFor="let value of embedding">{{ value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Save and Leave buttons for each result -->
+    <div class="button-group">
+      <button (click)="saveResult(result)" class="btn-secondary">Save Result</button>
+      <button (click)="leaveResult(result)" class="btn-danger">Leave</button>
+    </div>
+  </div>
+</div>
